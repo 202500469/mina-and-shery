@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مينا وشروق | دعوة زفاف</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f5ef;
+    color:#403d37;
+    font-family:"Cairo",sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   شاشة البداية
+========================= */
+
+#opening{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 20% 20%,#fffdf8,transparent 35%),
+        radial-gradient(circle at 80% 80%,#eadfd1,transparent 35%),
+        #f5f0e7;
+
+    transition:1.2s ease;
+}
+
+#opening.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.opening-content{
+    width:90%;
+    max-width:650px;
+
+    padding:55px 25px;
+
+    background:rgba(255,255,255,.55);
+
+    border:1px solid rgba(160,130,100,.2);
+
+    box-shadow:
+        0 30px 80px rgba(70,55,40,.12);
+
+    backdrop-filter:blur(12px);
+
+    animation:openingIn 1.5s ease;
+}
+
+@keyframes openingIn{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.opening-small{
+    font-family:"Amiri",serif;
+    font-size:20px;
+    color:#8c7866;
+}
+
+.opening-names{
+    margin-top:15px;
+
+    font-family:"Amiri",serif;
+    font-size:55px;
+
+    color:#51483f;
+}
+
+.opening-names span{
+    color:#aa8b6c;
+    margin:0 10px;
+}
+
+.opening-line{
+    width:110px;
+    height:1px;
+
+    background:#b9a184;
+
+    margin:25px auto;
+}
+
+.opening-date{
+    color:#837466;
+    font-size:15px;
+}
+
+.open-btn{
+    margin-top:35px;
+
+    padding:14px 40px;
+
+    border:none;
+    border-radius:3px;
+
+    background:#51483f;
+    color:white;
+
+    font-family:"Cairo";
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.open-btn:hover{
+    background:#9b7c5d;
+    transform:translateY(-4px);
+}
+
+.open-note{
+    margin-top:14px;
+
+    color:#a19385;
+
+    font-size:11px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
+
+main.show{
+    opacity:1;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #fffdf9,
+            #f5efe5 75%
+        );
+}
+
+.hero-inner{
+    max-width:900px;
+    width:100%;
+}
+
+.invite-text{
+    font-family:"Amiri",serif;
+
+    font-size:23px;
+
+    line-height:2;
+
+    color:#74685d;
+}
+
+.hero-line{
+    width:170px;
+    height:1px;
+
+    background:#bea88d;
+
+    margin:28px auto;
+}
+
+.names{
+    font-family:"Amiri",serif;
+
+    font-size:clamp(60px,11vw,115px);
+
+    color:#403a34;
+
+    line-height:1.2;
+
+    text-shadow:
+        0 10px 30px rgba(70,55,40,.13);
+}
+
+.heart{
+    color:#aa896b;
+
+    font-size:.55em;
+
+    display:inline-block;
+
+    animation:heartBeat 1.8s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+.hero-date{
+    font-family:"Amiri",serif;
+
+    font-size:31px;
+
+    color:#675b50;
+}
+
+.hero-time{
+    margin-top:5px;
+
+    color:#8c7d6e;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   FLOWERS
+========================= */
+
+.flower{
+    position:absolute;
+
+    color:#b79a7b;
+
+    opacity:.35;
+
+    font-size:38px;
+
+    animation:float 5s ease-in-out infinite;
+}
+
+.flower.one{
+    top:12%;
+    right:10%;
+}
+
+.flower.two{
+    bottom:15%;
+    left:10%;
+
+    animation-delay:1s;
+}
+
+.flower.three{
+    top:45%;
+    left:5%;
+
+    animation-delay:2s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(8deg);
+    }
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.section-title{
+    font-family:"Amiri",serif;
+
+    font-size:42px;
+
+    font-weight:400;
+
+    color:#51483f;
+}
+
+.section-subtitle{
+    margin-top:8px;
+
+    color:#8c7d70;
+
+    font-size:14px;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+    background:#f8f5ef;
+}
+
+.count-bar{
+    max-width:850px;
+
+    margin:50px auto 0;
+
+    padding:22px 15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-top:1px solid #d6c6b4;
+    border-bottom:1px solid #d6c6b4;
+}
+
+.count{
+    flex:1;
+}
+
+.count-number{
+    display:block;
+
+    font-family:"Amiri",serif;
+
+    font-size:42px;
+
+    color:#5b5046;
+}
+
+.count-label{
+    font-size:11px;
+
+    color:#978879;
+}
+
+.separator{
+    color:#b39a7d;
+
+    font-size:25px;
+}
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-section{
+    background:#eee8dd;
+}
+
+.calendar-box{
+    max-width:700px;
+
+    margin:50px auto 0;
+
+    padding:30px 25px;
+
+    background:#fffdf9;
+
+    border:1px solid #e1d5c6;
+
+    box-shadow:
+        0 25px 65px rgba(70,55,40,.1);
+}
+
+.month{
+    font-family:"Amiri",serif;
+
+    font-size:32px;
+
+    color:#5b5047;
+
+    margin-bottom:25px;
+}
+
+.calendar{
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:5px;
+}
+
+.weekday{
+    font-size:11px;
+
+    color:#968677;
+
+    padding:10px 0;
+}
+
+.day{
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    font-family:"Amiri",serif;
+
+    font-size:17px;
+
+    color:#6c6055;
+}
+
+
+/* =========================
+   دائرة يوم 5
+========================= */
+
+.wedding-day{
+    color:white;
+    z-index:1;
+}
+
+.wedding-day::before{
+    content:"";
+
+    position:absolute;
+
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    background:#ad8b6b;
+
+    box-shadow:
+        0 5px 15px rgba(120,90,65,.25);
+
+    z-index:-1;
+
+    animation:circlePulse 2s infinite;
+}
+
+.wedding-day span{
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    font-size:19px;
+
+    font-weight:bold;
+}
+
+@keyframes circlePulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp{
+    background:#f8f5ef;
+}
+
+.rsvp-box{
+    max-width:600px;
+
+    margin:50px auto 0;
+
+    padding:35px;
+
+    background:#fffdf9;
+
+    border:1px solid #ded1c0;
+
+    box-shadow:
+        0 20px 60px rgba(70,55,40,.1);
+}
+
+.rsvp-input{
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:1px solid #d8cabb;
+
+    background:#fffdf9;
+
+    outline:none;
+
+    text-align:right;
+
+    font-family:"Cairo";
+}
+
+.rsvp-input:focus{
+    border-color:#aa8b6c;
+}
+
+.rsvp-buttons{
+    display:flex;
+
+    gap:10px;
+}
+
+.rsvp-btn{
+    flex:1;
+
+    border:none;
+
+    padding:14px;
+
+    cursor:pointer;
+
+    font-family:"Cairo";
+
+    transition:.3s;
+}
+
+.yes{
+    background:#4d8a60;
+
+    color:white;
+}
+
+.no{
+    background:#e4d9ce;
+
+    color:#62564c;
+}
+
+.rsvp-btn:hover{
+    transform:translateY(-3px);
+}
+
+#message{
+    margin-top:18px;
+
+    font-size:13px;
+
+    color:#76685b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:80px 20px;
+
+    text-align:center;
+
+    background:#e7dfd2;
+}
+
+.footer-names{
+    font-family:"Amiri",serif;
+
+    font-size:43px;
+
+    color:#554b42;
+}
+
+.footer-date{
+    margin-top:10px;
+
+    color:#857668;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+    position:fixed;
+
+    bottom:20px;
+    left:20px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    border:1px solid #d3c3b2;
+
+    background:#fffdf9;
+
+    color:#675a4e;
+
+    cursor:pointer;
+
+    z-index:1000;
+
+    box-shadow:
+        0 8px 25px rgba(50,40,30,.15);
+}
+
+
+/* =========================
+   FALLING FLOWERS
+========================= */
+
+.petal{
+    position:fixed;
+
+    top:-30px;
+
+    z-index:500;
+
+    pointer-events:none;
+
+    color:#b59879;
+
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+    from{
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.7;
+    }
+
+    to{
+        transform:
+            translateY(110vh)
+            translateX(100px)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px){
+
+    .opening-names{
+        font-size:43px;
+    }
+
+    .names{
+        font-size:65px;
+    }
+
+    .invite-text{
+        font-size:20px;
+    }
+
+    .count-bar{
+        padding:18px 5px;
+    }
+
+    .count-number{
+        font-size:28px;
+    }
+
+    .count-label{
+        font-size:9px;
+    }
+
+    .separator{
+        font-size:17px;
+    }
+
+    .calendar-box{
+        padding:20px 8px;
+    }
+
+    .day{
+        height:44px;
+        font-size:15px;
+    }
+
+    .wedding-day::before{
+        width:38px;
+        height:38px;
+    }
+
+    .wedding-day span{
+        font-size:17px;
+    }
+
+    .rsvp-buttons{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     شاشة البداية
+========================= -->
+
+<div id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-small">
+            بكل الحب والسعادة
+        </div>
+
+        <div class="opening-names">
+
+            مينا
+
+            <span>♥</span>
+
+            شروق
+
+        </div>
+
+        <div class="opening-line"></div>
+
+        <div class="opening-date">
+            نتشرف بدعوتكم لمشاركتنا أجمل يوم في حياتنا
+        </div>
+
+        <button
+            class="open-btn"
+            onclick="openInvitation()">
+
+            افتح الدعوة ♡
+
+        </button>
+
+        <div class="open-note">
+            الموسيقى ستبدأ تلقائيًا عند فتح الدعوة
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="music" loop autoplay>
+
+    <source
+        src="peterpo.mp3.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music-btn"
+    id="musicBtn"
+    onclick="toggleMusic()">
+
+    ♫
+
+</button>
+
+
+<main id="main">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="flower one">❀</div>
+    <div class="flower two">✿</div>
+    <div class="flower three">❁</div>
+
+    <div class="hero-inner">
+
+        <div class="invite-text">
+
+            بكل الحب والسعادة
+
+            <br>
+
+            نتشرف بدعوتكم لمشاركتنا
+            فرحتنا في يوم زفافنا
+
+        </div>
+
+        <div class="hero-line"></div>
+
+        <div class="names">
+
+            مينا
+
+            <span class="heart">♥</span>
+
+            شروق
+
+        </div>
+
+        <div class="hero-line"></div>
+
+        <div class="hero-date">
+            ٥ مايو ٢٠٢٧
+        </div>
+
+        <div class="hero-time">
+            الساعة السابعة مساءً
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COUNTDOWN
+========================= -->
+
+<section class="section countdown">
+
+    <h2 class="section-title">
+        العد التنازلي
+    </h2>
+
+    <p class="section-subtitle">
+        حتى يوم فرحتنا ♥
+    </p>
+
+    <div class="count-bar">
+
+        <div class="count">
+            <span class="count-number" id="days">0</span>
+            <span class="count-label">يوم</span>
+        </div>
+
+        <div class="separator">:</div>
+
+        <div class="count">
+            <span class="count-number" id="hours">0</span>
+            <span class="count-label">ساعة</span>
+        </div>
+
+        <div class="separator">:</div>
+
+        <div class="count">
+            <span class="count-number" id="minutes">0</span>
+            <span class="count-label">دقيقة</span>
+        </div>
+
+        <div class="separator">:</div>
+
+        <div class="count">
+            <span class="count-number" id="seconds">0</span>
+            <span class="count-label">ثانية</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CALENDAR
+========================= -->
+
+<section class="section calendar-section">
+
+    <h2 class="section-title">
+        احفظوا الموعد
+    </h2>
+
+    <p class="section-subtitle">
+        يومنا الكبير ♥
+    </p>
+
+
+    <div class="calendar-box">
+
+        <div class="month">
+            مايو ٢٠٢٧
+        </div>
+
+
+        <div class="calendar">
+
+            <div class="weekday">الأحد</div>
+            <div class="weekday">الإثنين</div>
+            <div class="weekday">الثلاثاء</div>
+            <div class="weekday">الأربعاء</div>
+            <div class="weekday">الخميس</div>
+            <div class="weekday">الجمعة</div>
+            <div class="weekday">السبت</div>
+
+
+            <!-- مايو 2027 يبدأ السبت -->
+
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day"></div>
+
+            <div class="day">١</div>
+            <div class="day">٢</div>
+            <div class="day">٣</div>
+            <div class="day">٤</div>
+
+
+            <!-- يوم الفرح -->
+
+            <div class="day wedding-day">
+                <span>٥</span>
+            </div>
+
+
+            <div class="day">٦</div>
+            <div class="day">٧</div>
+            <div class="day">٨</div>
+
+            <div class="day">٩</div>
+            <div class="day">١٠</div>
+            <div class="day">١١</div>
+            <div class="day">١٢</div>
+            <div class="day">١٣</div>
+            <div class="day">١٤</div>
+            <div class="day">١٥</div>
+
+            <div class="day">١٦</div>
+            <div class="day">١٧</div>
+            <div class="day">١٨</div>
+            <div class="day">١٩</div>
+            <div class="day">٢٠</div>
+            <div class="day">٢١</div>
+            <div class="day">٢٢</div>
+
+            <div class="day">٢٣</div>
+            <div class="day">٢٤</div>
+            <div class="day">٢٥</div>
+            <div class="day">٢٦</div>
+            <div class="day">٢٧</div>
+            <div class="day">٢٨</div>
+            <div class="day">٢٩</div>
+
+            <div class="day">٣٠</div>
+            <div class="day">٣١</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     تأكيد الحضور
+========================= -->
+
+<section class="section rsvp">
+
+    <h2 class="section-title">
+        تأكيد الحضور
+    </h2>
+
+    <p class="section-subtitle">
+        وجودكم هو أجمل هدية لنا ♥
+    </p>
+
+
+    <div class="rsvp-box">
+
+        <input
+            class="rsvp-input"
+            id="guestName"
+            type="text"
+            placeholder="اكتب اسمك هنا">
+
+
+        <div class="rsvp-buttons">
+
+            <button
+                class="rsvp-btn yes"
+                onclick="confirmAttendance()">
+
+                ✓ أؤكد حضوري
+
+            </button>
+
+
+            <button
+                class="rsvp-btn no"
+                onclick="cannotAttend()">
+
+                أعتذر عن الحضور
+
+            </button>
+
+        </div>
+
+
+        <div id="message"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-names">
+        مينا ♥ شروق
+    </div>
+
+    <div class="footer-date">
+        ٥ مايو ٢٠٢٧ — الساعة ٧ مساءً
+    </div>
+
+</footer>
+
+
+</main>
+
+
+<script>
+
+/* =========================
+   رقم الواتساب
+========================= */
+
+const whatsappNumber = "2010XXXXXXXXX";
+
+
+/* =========================
+   العناصر
+========================= */
+
+const opening =
+    document.getElementById("opening");
+
+const main =
+    document.getElementById("main");
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+
+/* =========================
+   محاولة تشغيل الموسيقى
+========================= */
+
+window.addEventListener("load", function(){
+
+    music.play().then(function(){
+
+        musicBtn.innerHTML = "❚❚";
+
+    }).catch(function(){
+
+        musicBtn.innerHTML = "♫";
+
+    });
+
+});
+
+
+/* =========================
+   تشغيل الموسيقى عند أول
+   تفاعل مع الصفحة
+========================= */
+
+function startMusic(){
+
+    if(music.paused){
+
+        music.play().then(function(){
+
+            musicBtn.innerHTML = "❚❚";
+
+        }).catch(function(){});
+
+    }
+
+}
+
+
+/* أي ضغطة في الصفحة تشغل الموسيقى */
+
+document.addEventListener(
+    "click",
+    startMusic,
+    {once:false}
+);
+
+
+/* =========================
+   فتح الدعوة
+========================= */
+
+function openInvitation(){
+
+    opening.classList.add("hide");
+
+    main.classList.add("show");
+
+    music.play().then(function(){
+
+        musicBtn.innerHTML = "❚❚";
+
+    }).catch(function(){
+
+        musicBtn.innerHTML = "♫";
+
+    });
+
+}
+
+
+/* =========================
+   زر الموسيقى
+========================= */
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+        musicBtn.innerHTML = "❚❚";
+
+    }else{
+
+        music.pause();
+
+        musicBtn.innerHTML = "♫";
+
+    }
+
+}
+
+
+/* =========================
+   العد التنازلي
+========================= */
+
+const weddingDate =
+    new Date(
+        "May 5, 2027 19:00:00"
+    ).getTime();
+
+
+function countdown(){
+
+    const now =
+        new Date().getTime();
+
+    const distance =
+        weddingDate - now;
+
+
+    if(distance <= 0){
+
+        document.getElementById("days").innerText = "٠";
+        document.getElementById("hours").innerText = "٠";
+        document.getElementById("minutes").innerText = "٠";
+        document.getElementById("seconds").innerText = "٠";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000 * 60))
+            /
+            1000
+        );
+
+
+    document.getElementById("days").innerText =
+        days;
+
+    document.getElementById("hours").innerText =
+        hours;
+
+    document.getElementById("minutes").innerText =
+        minutes;
+
+    document.getElementById("seconds").innerText =
+        seconds;
+
+}
+
+
+countdown();
+
+setInterval(countdown,1000);
+
+
+/* =========================
+   تأكيد الحضور
+========================= */
+
+function confirmAttendance(){
+
+    const name =
+        document
+        .getElementById("guestName")
+        .value
+        .trim();
+
+
+    const message =
+        document.getElementById("message");
+
+
+    if(!name){
+
+        message.innerText =
+            "من فضلك اكتب اسمك أولاً ❤️";
+
+        return;
+    }
+
+
+    const text =
+`السلام عليكم ❤️
+
+أنا ${name}
+
+أؤكد حضوري لحفل زفاف
+مينا وشروق 💍
+
+📅 ٥ مايو ٢٠٢٧
+🕖 الساعة ٧ مساءً
+
+ألف مبروك للعروسين ❤️`;
+
+
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(text);
+
+
+    window.open(url,"_blank");
+
+}
+
+
+/* =========================
+   الاعتذار
+========================= */
+
+function cannotAttend(){
+
+    const name =
+        document
+        .getElementById("guestName")
+        .value
+        .trim();
+
+
+    const message =
+        document.getElementById("message");
+
+
+    if(!name){
+
+        message.innerText =
+            "من فضلك اكتب اسمك أولاً.";
+
+        return;
+    }
+
+
+    const text =
+`السلام عليكم
+
+أنا ${name}
+
+للأسف لن أتمكن من حضور حفل زفاف
+مينا وشروق.
+
+أتمنى لكم حياة سعيدة ومليئة بالحب ❤️`;
+
+
+    const url =
+        "https://wa.me/+201112306099"
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(text);
+
+
+    window.open(url,"_blank");
+
+}
+
+
+/* =========================
+   الورود المتحركة
+========================= */
+
+function createPetal(){
+
+    const petal =
+        document.createElement("div");
+
+    petal.className = "petal";
+
+
+    const flowers = [
+        "❀",
+        "✿",
+        "❁",
+        "✾"
+    ];
+
+
+    petal.innerText =
+        flowers[
+            Math.floor(
+                Math.random() *
+                flowers.length
+            )
+        ];
+
+
+    petal.style.left =
+        Math.random() * 100 + "vw";
+
+
+    petal.style.fontSize =
+        (12 + Math.random() * 12) + "px";
+
+
+    const duration =
+        5 + Math.random() * 5;
+
+
+    petal.style.animationDuration =
+        duration + "s";
+
+
+    document.body.appendChild(petal);
+
+
+    setTimeout(
+        () => petal.remove(),
+        duration * 1000
+    );
+
+}
+
+
+setInterval(createPetal,900);
+
+</script>
+
+</body>
+</html>
